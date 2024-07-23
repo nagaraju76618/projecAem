@@ -1,0 +1,28 @@
+<h2 class="index">Sidebar_1 component</h2>
+<div data-sly-use.obj="com.adobe.aem.guides.demo.core.models.Task_4">
+    <h4>LogoPath :${obj.lpath}</h4>
+
+    <p>MobileImg :<img src="${obj.mobileImg}" alt="wall" width="150" height="100"/></p>
+
+    <h4>LogoLink :${obj.logolink}</h4>
+    <h4>checkbox :${obj.checkbox}</h4>
+    <h4>country :${obj.country}</h4>
+
+  <div data-sly-list.object="${obj.headlink}">
+   <p>Image :<img src="${object.Img}" alt="naruto" width="150px" height="100px"/></p>
+      <h3>Name :${object.name}</h3>
+
+  <div data-sly-list.objec="${obj.naviside}">
+       <h3>Desktop :${objec.desktop}</h3>
+        <h3>MobileIcon :<img src="${objec.mobileIcon}" alt="naruto" width="150px" height="100px"/></h3>
+
+     <div data-sly-list.ob="${objec.urlNavigat}">
+        <p>Url :${ob.url}</p>
+
+      </div>
+    </div>
+  </div>
+</div>
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html">
+  <sly data-sly-call="${clientlib.all @ categories='demo'}"/>
+</sly>

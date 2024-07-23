@@ -1,0 +1,13 @@
+<h2 class="sknv"> Header_1 component</h2>
+<div data-sly-use.obj="com.adobe.aem.guides.demo.core.models.Task_2">
+ <h3>PathField :${obj.pathfield}</h3>
+ <h3 class="my">TextField :${obj.textfield}</h3>
+ <h3>checkBox :${obj.checkbox}</h3>
+ <div data-sly-list.object="${obj.multi}">
+  <h3>Text :${object.text2}</h3>
+  <h3>DateOfBirth :${object.dob}</h3>
+ </div>
+</div>
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html">
+  <sly data-sly-call="${clientlib.all @ categories='libraryclient'}"/>
+</sly>

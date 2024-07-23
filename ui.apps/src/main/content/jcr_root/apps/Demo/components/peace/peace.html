@@ -1,0 +1,20 @@
+<h1>multi with sling</h1>
+ <div data-sly-use.obj="com.adobe.aem.guides.demo.core.models.Multi">
+<p class="sknv">FullName:${obj.fullname}</p>
+<p>MobileNumber:${obj.mobilenumber}</p>
+<p>Date:${obj.date}</p>
+<p>Gender:${obj.gender}</p>
+<p>checkbox:${obj.checkbox}</p>
+<div data-sly-list.push="${obj.multifield}">
+    <p>name:${push.name}</p>
+    <p>date:${push.date}</p>
+
+<div data-sly-list.paste="${push.nestedMulti}">
+    <p>Number : ${paste.number}</p>
+    <p>address: ${paste.address}</p>
+</div>
+</div>
+ </div>
+ <sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html">
+    <sly data-sly-call="${clientlib.all @ categories='libraryclient'}"/>
+</sly>

@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="navigate"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+        <items jcr:primaryType="nt:unstructured">
+            <columns
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <tabs
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/tabs">
+                        <items jcr:primaryType="nt:unstructured">
+                            <tab1
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="tab1"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <Heading
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldDescription=" heading name"
+                                        fieldLabel="heading"
+                                        name="./heading"/>
+                                    <datepick
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/datepicker"
+                                        fieldLabel="date"
+                                        name="./date"/>
+                                    <logoImg
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                        fieldLabel="image"
+                                        name="./logoimg"/>
+                                </items>
+                            </tab1>
+                            <tab2
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="tab2"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <description
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                        fieldDescription="write ur content"
+                                        name="./text"
+                                        useFixedInlineToolbar="{Boolean}true">
+                                        <rtePlugins jcr:primaryType="nt:unstructured">
+                                            <format
+                                                jcr:primaryType="nt:unstructured"
+                                                features="bold,italic"/>
+                                            <justify
+                                                jcr:primaryType="nt:unstructured"
+                                                features="-"/>
+                                            <links
+                                                jcr:primaryType="nt:unstructured"
+                                                features="modifylink,unlink"/>
+                                            <lists
+                                                jcr:primaryType="nt:unstructured"
+                                                features="*"/>
+                                            <misctools jcr:primaryType="nt:unstructured">
+                                                <specialCharsConfig jcr:primaryType="nt:unstructured">
+                                                    <chars jcr:primaryType="nt:unstructured">
+                                                        <default_copyright
+                                                            jcr:primaryType="nt:unstructured"
+                                                            entity="&amp;copy;"
+                                                            name="copyright"/>
+                                                        <default_euro
+                                                            jcr:primaryType="nt:unstructured"
+                                                            entity="&amp;euro;"
+                                                            name="euro"/>
+                                                        <default_registered
+                                                            jcr:primaryType="nt:unstructured"
+                                                            entity="&amp;reg;"
+                                                            name="registered"/>
+                                                        <default_trademark
+                                                            jcr:primaryType="nt:unstructured"
+                                                            entity="&amp;trade;"
+                                                            name="trademark"/>
+                                                    </chars>
+                                                </specialCharsConfig>
+                                            </misctools>
+                                            <paraformat
+                                                jcr:primaryType="nt:unstructured"
+                                                features="*">
+                                                <formats jcr:primaryType="nt:unstructured">
+                                                    <default_p
+                                                        jcr:primaryType="nt:unstructured"
+                                                        description="Paragraph"
+                                                        tag="p"/>
+                                                    <default_h1
+                                                        jcr:primaryType="nt:unstructured"
+                                                        description="Heading 1"
+                                                        tag="h1"/>
+                                                    <default_h2
+                                                        jcr:primaryType="nt:unstructured"
+                                                        description="Heading 2"
+                                                        tag="h2"/>
+                                                    <default_h3
+                                                        jcr:primaryType="nt:unstructured"
+                                                        description="Heading 3"
+                                                        tag="h3"/>
+                                                    <default_h4
+                                                        jcr:primaryType="nt:unstructured"
+                                                        description="Heading 4"
+                                                        tag="h4"/>
+                                                    <default_h5
+                                                        jcr:primaryType="nt:unstructured"
+                                                        description="Heading 5"
+                                                        tag="h5"/>
+                                                    <default_h6
+                                                        jcr:primaryType="nt:unstructured"
+                                                        description="Heading 6"
+                                                        tag="h6"/>
+                                                    <default_blockquote
+                                                        jcr:primaryType="nt:unstructured"
+                                                        description="Quote"
+                                                        tag="blockquote"/>
+                                                    <default_pre
+                                                        jcr:primaryType="nt:unstructured"
+                                                        description="Preformatted"
+                                                        tag="pre"/>
+                                                </formats>
+                                            </paraformat>
+                                            <table
+                                                jcr:primaryType="nt:unstructured"
+                                                features="-">
+                                                <hiddenHeaderConfig
+                                                    jcr:primaryType="nt:unstructured"
+                                                    hiddenHeaderClassName="cq-wcm-foundation-aria-visuallyhidden"
+                                                    hiddenHeaderEditingCSS="cq-RichText-hiddenHeader--editing"/>
+                                            </table>
+                                            <tracklinks
+                                                jcr:primaryType="nt:unstructured"
+                                                features="*"/>
+                                        </rtePlugins>
+                                        <uiSettings jcr:primaryType="nt:unstructured">
+                                            <cui jcr:primaryType="nt:unstructured">
+                                                <inline
+                                                    jcr:primaryType="nt:unstructured"
+                                                    toolbar="[format#bold,format#italic,format#underline,#justify,#lists,links#modifylink,links#unlink,#paraformat]">
+                                                    <popovers jcr:primaryType="nt:unstructured">
+                                                        <justify
+                                                            jcr:primaryType="nt:unstructured"
+                                                            items="[justify#justifyleft,justify#justifycenter,justify#justifyright]"
+                                                            ref="justify"/>
+                                                        <lists
+                                                            jcr:primaryType="nt:unstructured"
+                                                            items="[lists#unordered,lists#ordered,lists#outdent,lists#indent]"
+                                                            ref="lists"/>
+                                                        <paraformat
+                                                            jcr:primaryType="nt:unstructured"
+                                                            items="paraformat:getFormats:paraformat-pulldown"
+                                                            ref="paraformat"/>
+                                                    </popovers>
+                                                </inline>
+                                                <tableEditOptions
+                                                    jcr:primaryType="nt:unstructured"
+                                                    toolbar="[table#insertcolumn-before,table#insertcolumn-after,table#removecolumn,-,table#insertrow-before,table#insertrow-after,table#removerow,-,table#mergecells-right,table#mergecells-down,table#mergecells,table#splitcell-horizontal,table#splitcell-vertical,-,table#selectrow,table#selectcolumn,-,table#ensureparagraph,-,table#modifytableandcell,table#removetable,-,undo#undo,undo#redo,-,table#exitTableEditing,-]"/>
+                                            </cui>
+                                        </uiSettings>
+                                    </description>
+                                    <RadioGroup
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                        name="./radio"
+                                        required="{Boolean}true">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <opt1
+                                                jcr:primaryType="nt:unstructured"
+                                                checked="{Boolean}true"
+                                                text="car"
+                                                value="opt1"/>
+                                            <opt2
+                                                jcr:primaryType="nt:unstructured"
+                                                checked="{Boolean}true"
+                                                text="bikes"
+                                                value="opt2"/>
+                                            <select
+                                                jcr:primaryType="nt:unstructured"
+                                                text="select one option"
+                                                value="select one option"/>
+                                        </items>
+                                    </RadioGroup>
+                                    <colorpick
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+                                        fieldLabel="colorpick"
+                                        name="./colorpick"/>
+                                    <ui_x0020_element
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                        fieldLabel="UiElement"
+                                        name="./element">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <select
+                                                jcr:primaryType="nt:unstructured"
+                                                text="select one option"
+                                                value="select"/>
+                                            <span
+                                                jcr:primaryType="nt:unstructured"
+                                                text="span"
+                                                value="span"/>
+                                            <h1
+                                                jcr:primaryType="nt:unstructured"
+                                                text="h1"
+                                                value="h1"/>
+                                            <div
+                                                jcr:primaryType="nt:unstructured"
+                                                text="div"
+                                                value="div"/>
+                                            <p1
+                                                jcr:primaryType="nt:unstructured"
+                                                text="p1"
+                                                value="p1"/>
+                                        </items>
+                                    </ui_x0020_element>
+                                </items>
+                            </tab2>
+                            <tab3
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="tab3"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <header
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceTYpe="granite/ui/components/coral/foundation/include"
+                                        path="/apps/Demo/components/Header/cq:dialog/content/items/column/items/tabs/items/surge/items"/>
+                                </items>
+                            </tab3>
+                        </items>
+                    </tabs>
+                </items>
+            </columns>
+        </items>
+    </content>
+</jcr:root>

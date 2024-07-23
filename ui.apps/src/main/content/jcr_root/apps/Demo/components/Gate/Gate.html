@@ -1,0 +1,19 @@
+<h2>New Gate Task</h2>
+<div data-sly-use.obj="com.adobe.aem.guides.demo.core.models.Naga">
+   <p>FullName: ${obj.fullname}</p>
+   <p>FatherName: ${obj.fathername}</p>
+   <p>phNumber: ${obj.phnumber}</p>
+   <p>review: ${obj.review}</p>
+   
+  <ol data-sly-list.object="${obj.sports}">
+    <li>Game: ${object.game}</li>
+    <li>Music: ${object.music}</li>
+  </ol>
+ <ol data-sly-list.ambu="${obj.education}">
+      <li>Degee: ${ambu.degree}</li>
+    <ul data-sly-list.sasuke="${ambu.qualification}">
+      <li>HQ: ${sasuke.hq}</li>
+      <li>cgpa: ${sasuke.cgpa}</li>     
+    </ul>
+  </ol> 
+ </div>

@@ -1,0 +1,9 @@
+<div child pages>
+  <div data-sly-use.obj="com.adobe.aem.guides.demo.core.models.Task1" data-sly-test="${obj.child}">
+    <p>PathField :${obj.pathfield}</p>
+   <sly data-sly-list.object="${obj.child}">
+     <p>Title: ${object.title}</p>
+     <p>description: ${object.description}</p>
+   </sly>
+  </div>
+</div>
