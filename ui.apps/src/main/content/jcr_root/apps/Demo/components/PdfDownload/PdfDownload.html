@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Download and Send PDF</title>
+    <style>
+        body {
+        }
+        #content {
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+            text-align: left;
+        }
+        .content-text {
+            display: flex;
+            align-items: center;
+            justify-content: left;
+        }
+        #dynamicName {
+            display: inline-block;
+
+            padding: 10px;
+            border-radius: 5px;
+            margin: 0;
+        }
+        .content-image {
+            width: 25px; /* Set a suitable width for the image */
+            height: auto; /* Maintain aspect ratio */
+            margin-left: 10px;
+        }
+        #downloadButton {
+            margin: 20px;
+            padding: 10px 20px;
+
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+
+    <button id="downloadButton" onclick="downloadAndSendPDF()">Download</button>
+
+    <script>
+        function downloadAndSendPDF() {
+            var button = document.getElementById('downloadButton');
+            button.style.visibility = 'visible';
+
+            // Generate PDF from the entire page
+            html2pdf().from(document.body).set({
+                margin: 1,
+                filename: 'generated.pdf',
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+            }).toPdf().output('blob').then(function (pdfBlob) {
+                // Create a link element
+                var url = window.URL.createObjectURL(pdfBlob);
+                var a = document.createElement('a');
+                a.style.display = 'none';
+                a.href = url;
+                a.download = 'download.pdf';
+
+                // Append the link to the body
+                document.body.appendChild(a);
+                a.click();
+
+                // Remove the link
+                window.URL.revokeObjectURL(url);
+                document.body.removeChild(a);
+
+                button.style.visibility = 'visible';
+            });
+        }
+    </script>
+</body>
+</html>
