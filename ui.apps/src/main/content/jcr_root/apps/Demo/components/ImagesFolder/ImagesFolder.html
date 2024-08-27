@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Paths</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#yourDropdown').on('change', function () {
+                $.ajax({
+                    url: '/bin/imageFolder',
+                    type: 'GET',
+                    dataType: 'json',
+                    success: function (data) {
+                        // Clear existing options
+                        $('#yourDropdown').empty();
+
+                        // Check if there are image paths
+                        if (data && data.imagePaths && data.imagePaths.length > 0) {
+                            // Add new options to the dropdown
+                            data.imagePaths.forEach(function (item) {
+                                $('#yourDropdown').append(
+                                    $('<option></option>').val(item.path).text(item.name)
+                                );
+                            });
+                        } else {
+                            $('#yourDropdown').append(
+                                $('<option></option>').text('No images found')
+                            );
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        console.error('Error fetching image paths:', error);
+                        $('#yourDropdown').empty().append(
+                            $('<option></option>').text('Error loading images')
+                        );
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Fetch Image Paths</h1>
+    <select id="yourDropdown">
+        <option value="">Select an image</option>
+        <!-- Options will be added here dynamically -->
+    </select>
+</body>
+</html>
